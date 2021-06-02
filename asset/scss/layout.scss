@@ -1,0 +1,192 @@
+/* layout css */
+// 공통 css
+#wrap{
+  width: $siteWidth;
+  margin: 0 auto;
+  #header{
+    position: relative;
+    height: 60px;
+    margin-top: 10px;
+    #top_logo{
+      float: left;
+      width: 42px;
+      height: 39px;
+      a{
+        text-transform: uppercase;
+        img{
+          width: 42px;
+          height: 39px;
+        }
+      }
+    }
+    #top_nav{
+      position: relative;
+      height: 60px;
+      float: right;
+      ul{
+        float: left;
+        li{
+          position: relative;
+          float: left;
+          margin-left: 30px;
+          &:nth-child(1){
+            margin-left: 0;
+          }
+          a{
+            line-height: 60px;
+            height: 60px;
+            text-transform: uppercase;
+          }
+          &:hover{
+            .submenu{
+              visibility: visible;
+              opacity: 1;
+              top: 100%;
+            }
+          }
+          // submenu
+          .submenu{
+            position: absolute;
+            border: 1px solid $borderColor;
+            border-top: none;
+            visibility: hidden;
+            opacity: 0;
+            top: calc(100% - 3px);
+            left: -10px;
+            transition: 0.3s;
+            z-index: 10;
+            background: #fff;
+            padding: 0 10px;
+            li{
+              width: 100%;
+              margin: 0;
+              background: #fff;
+              box-sizing: border-box;
+              min-width: 150px;
+              transition: 0.3s;
+              a{
+                line-height: 40px;
+                height: 40px;
+                text-transform: capitalize;
+                padding-left: 5px;
+              }
+              &:hover{
+                color: $fontHoverColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // 하단 영역
+  #footer{
+    margin-top: 50px;
+    color: $fontBasicColor;
+    font-size: 14px;
+    // background: $boxBg;
+    .footer_top{
+      padding: 60px 0 30px;
+    }
+    &>.footer_container{
+      padding: 10px 0;
+      border-top: 1px solid $borderColor;
+      text-align: center;
+      color: #666;
+      .copyright{
+        span{
+          font-size: $fontSizeNormal;
+          font-weight: bold;
+        }
+      }
+    }
+    .footer_container{
+      width: $siteWidth;
+      margin: 0 auto;
+      .row{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .column{
+          flex: 25%;
+          flex-grow: 0;
+          flex-shrink: 0;
+          box-sizing: border-box;
+          padding: 0 10px;
+          margin-bottom: 30px;
+          &.footer_logo{
+            flex: 140px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            h3{
+              // font-size: 34px;
+              // line-height: 1;
+              // margin-bottom: 20px;
+              // padding: 2px 0 2px 0px;
+              // letter-spacing: 3px;
+              // text-transform: capitalize;
+            }
+          }
+          h4{
+            position: relative;
+            font-size: 14px;
+            font-weight: 700px;
+            text-transform: uppercase;
+            padding-bottom: 12px;
+            margin: 0 20px 20px 0;
+            /* h4:before,after common */
+            &:before,&:after{
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              height: 2px;
+            }
+            &:before{
+              right: 0;
+              background: $borderColorPrimary;
+            }
+            &:after{
+              width: 50px;
+              background: $borderColorOther;
+            }
+          }
+          /* footer list */
+          ul{
+            li{
+              padding: 5px 0;
+              &:nth-child(1){
+                padding-top: 0;
+              }
+              a{ text-transform: capitalize; }
+            }
+          }
+          p{ line-height: 26px; }
+          &.sign{
+            input{
+              float: left;
+              &[type=email]{
+                border: 1px solid $borderColor;
+                box-sizing: border-box;
+                padding: 6px 8px;
+                width: 65%;
+                background: #fff;
+                color: $fontBasicColor;
+              }
+              &[type=submit]{
+                border: 1px solid $borderColorPrimary;
+                box-sizing: border-box;
+                background: $gbtnColor;
+                padding: 6px 0;
+                width: 35%;
+                text-align: center;
+                color: #fff;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

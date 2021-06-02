@@ -1,0 +1,7 @@
+body.subpage main .container {
+  display: flex;
+}
+
+body.subpage main .container #lnb {
+  flex: 230px;
+}

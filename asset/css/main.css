@@ -1,0 +1,6 @@
+/* main css */
+.mainbanner {
+  height: 550px;
+  background: url("../img/mainbanner.png") no-repeat;
+  background-size: cover;
+}
