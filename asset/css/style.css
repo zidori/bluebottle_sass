@@ -1,5 +1,6 @@
 /* var scss */
 /* initial css */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +12,8 @@ html, body {
 }
 
 body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
   background: #fff;
   color: #555;
 }
@@ -27,7 +30,6 @@ li {
 a {
   text-decoration: none;
   color: #555;
-  transition: 0.3s;
 }
 
 a:hover {
@@ -41,6 +43,10 @@ img {
 }
 
 /* component - inner, box, items */
+.inner .title {
+  margin-bottom: 20px;
+}
+
 .inner .box {
   display: flex;
 }
@@ -113,6 +119,8 @@ img {
 .inner .box.items_2 .items {
   flex: 50%;
   align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .inner .box.list .items {
@@ -154,6 +162,45 @@ img {
 
 .inner .box.expand .items {
   padding: 50px 0;
+}
+
+.inner .box.expand .instructor_box {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+.inner .box.expand .instructor_box .instructor_img {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 50%;
+  text-align: center;
+  display: block;
+}
+
+.inner .box.expand .instructor_box .instructor {
+  padding: 20px 0 10px 0;
+}
+
+.inner .box.expand .instructor_box .instructor + p {
+  margin-bottom: 20px;
+}
+
+.inner .box.banner_3 {
+  margin: 50px 0;
+}
+
+.inner .box.banner_3 .items.img_3 {
+  padding: 0 !important;
+  margin: 0;
+  flex-basis: 33%;
+  flex-shrink: 0;
+  flex-grow: 1;
+  border: none;
 }
 
 .inner .box.blog_expand .items {
@@ -241,6 +288,7 @@ img {
 }
 
 #wrap #header #top_nav ul li .submenu {
+  width: 100%;
   position: absolute;
   border: 1px solid #f7f7f7;
   border-top: none;
@@ -248,7 +296,7 @@ img {
   opacity: 0;
   top: calc(100% - 3px);
   left: -10px;
-  transition: 0.3s;
+  transition: visibility 0.3s, opacity 0.4s;
   z-index: 10;
   background: #fff;
   padding: 0 10px;
@@ -259,8 +307,9 @@ img {
   margin: 0;
   background: #fff;
   box-sizing: border-box;
-  min-width: 150px;
-  transition: 0.3s;
+  min-width: 180px;
+  transition-property: visibility;
+  transition-duration: 0.3s;
 }
 
 #wrap #header #top_nav ul li .submenu li a {
@@ -326,7 +375,8 @@ img {
 #wrap #footer .footer_container .row .column h4 {
   position: relative;
   font-size: 14px;
-  font-weight: 700px;
+  font-weight: 400;
+  letter-spacing: -1px;
   text-transform: uppercase;
   padding-bottom: 12px;
   margin: 0 20px 20px 0;
@@ -398,6 +448,7 @@ img {
   background-size: cover;
 }
 
+/* subpage css */
 body.subpage main .container {
   display: flex;
 }
@@ -408,10 +459,16 @@ body.subpage main .container #lnb {
   flex-grow: 0;
   box-sizing: border-box;
   padding-right: 50px;
+  height: 100%;
+}
+
+body.subpage main .container #lnb ul {
+  height: 100%;
 }
 
 body.subpage main .container #lnb ul li {
   border-bottom: 1px solid #f7f7f7;
+  height: 100%;
 }
 
 body.subpage main .container #lnb ul li a {
@@ -421,11 +478,13 @@ body.subpage main .container #lnb ul li a {
   line-height: 50px;
   font-size: 18px;
   box-sizing: border-box;
-  transition: 0.3s;
+  transition-property: padding-left, background, color;
+  transition-duration: 1s;
 }
 
 body.subpage main .container #lnb ul li a:hover {
   padding-left: 10px;
+  transition: padding 1s;
 }
 
 body.subpage main .container #lnb ul li a.on {
@@ -465,6 +524,92 @@ body.subpage main .container .contents .banner.coffee.coffee + .inner ul {
   list-style: circle;
 }
 
+body.subpage main .container .contents .banner.virtual {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background: url("../img/learn/learn.jpg") no-repeat center center;
+  background-size: cover;
+  margin-bottom: 50px;
+}
+
+body.subpage main .container .contents .banner.virtual .subtitle {
+  position: absolute;
+  padding-top: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6d6e71;
+}
+
+body.subpage main .container .contents .banner.virtual .subtitle:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 3px;
+  background: #6d6e71;
+}
+
+body.subpage main .container .contents .banner.virtual ~ .inner .items {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20px 40px 20px 0;
+  border: 1px solid #eceeef;
+}
+
+body.subpage main .container .contents .banner.virtual ~ .inner .items .course_number {
+  padding: 0 20px;
+  font-size: 26px;
+  font-weight: 500;
+}
+
+body.subpage main .container .contents .banner.virtual ~ .inner .items .course_box {
+  width: 80%;
+}
+
+body.subpage main .container .contents .banner.virtual ~ .inner .items .course_box .course_name {
+  font-size: 21px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eceeef;
+  cursor: pointer;
+  position: relative;
+}
+
+body.subpage main .container .contents .banner.virtual ~ .inner .items .course_box .course_name:hover {
+  color: #08c;
+}
+
+body.subpage main .container .contents .banner.virtual ~ .inner .items .course_box .course_name:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #eceeef;
+}
+
+body.subpage main .container .contents .banner.virtual ~ .inner .items .course_box .curriculum .curriculum_list {
+  margin: 25px 0;
+  padding-bottom: 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+body.subpage main .container .contents .banner.virtual ~ .inner .items .course_box .curriculum .curriculum_list:before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-right: 1px solid #6d6e71;
+  border-top: 1px solid #6d6e71;
+  transform: rotate(45deg);
+}
+
 body.subpage main .container .contents .box .items {
   padding-top: 50px;
   font-size: 14px;
@@ -480,6 +625,68 @@ body.subpage main .container .contents .box .items.middle {
 
 body.subpage main .container .contents .box .items .textblue {
   color: #01a1dd;
+}
+
+body.subpage main .container .contents .box .items.brew {
+  padding: 20px;
+}
+
+body.subpage main .container .contents .box .items.brew .brew_box {
+  position: relative;
+  cursor: pointer;
+}
+
+body.subpage main .container .contents .box .items.brew .brew_box img {
+  opacity: 1;
+}
+
+body.subpage main .container .contents .box .items.brew .brew_box .img_hover_box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0.2;
+  transition-property: opacity;
+  transition-duration: 0.2s;
+}
+
+body.subpage main .container .contents .box .items.brew .brew_box .brew_text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+body.subpage main .container .contents .box .items.brew .brew_box .brew_text .brew_title {
+  width: 100%;
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+body.subpage main .container .contents .box .items.brew .brew_box .brew_text .start_guide {
+  position: absolute;
+  margin-top: 30px;
+  padding-right: 20px;
+}
+
+body.subpage main .container .contents .box .items.brew .brew_box .brew_text .start_guide:after {
+  position: absolute;
+  content: "";
+  bottom: calc(50% - 3px);
+  right: 0;
+  width: 5px;
+  height: 5px;
+  border-right: 1px solid #fff;
+  border-top: 1px solid #fff;
+  transform: rotate(45deg);
+}
+
+body.subpage main .container .contents .box .items.brew .brew_box:hover .img_hover_box {
+  opacity: 0.5;
 }
 
 body.subpage main .container .contents .blog_section_title {
@@ -610,18 +817,59 @@ body.subpage main .container .contents .inner.kakao_map #map {
   height: 560px;
 }
 
+body.subpage main .container .contents .inner.return .items {
+  padding: 20px 0;
+  font-weight: 400;
+}
+
+body.subpage main .container .contents .inner.return .items h3 {
+  padding-top: 0;
+}
+
+body.subpage main .container .contents .inner.return .items h3 + p {
+  font-size: 16px;
+}
+
+body.subpage main .container .contents .inner.return .items h3 + p a {
+  background: none;
+  color: #01a1dd;
+}
+
+body.subpage main .container .contents .inner.return .items h3 + p + span {
+  font-weight: 200;
+}
+
+body.subpage main .container .contents h3.course_title {
+  padding: 25px 0;
+  position: relative;
+  color: #6d6e71;
+  font-size: 32px;
+  margin-top: 20px;
+}
+
+body.subpage main .container .contents h3.course_title:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 3px;
+  background: #01a1dd;
+}
+
 .contents .inner .product ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .contents .inner .product ul li {
-  flex: calc(33% - 10px);
-  padding-right: 10px;
+  flex-basis: 33%;
+  padding-right: 20px;
   flex-grow: 0;
   flex-shrink: 0;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .contents .inner .product ul li .img_box {
@@ -668,6 +916,10 @@ body.subpage main .container .contents .inner.kakao_map #map {
 .contents .inner .product ul li .product_text_box .product_desc {
   margin-bottom: 5px;
   font-size: 14px;
+}
+
+.contents .inner .product ul li .product_text_box .product_desc + p {
+  font-size: 12px;
 }
 
 .contents .inner .product ul li:hover a img {

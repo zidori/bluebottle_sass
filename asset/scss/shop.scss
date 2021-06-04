@@ -4,13 +4,15 @@
       ul{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
         li{
-          flex: calc(33% - 10px);
-          padding-right: 10px;
+          // flex-basis: calc(33% - 20px);
+          flex-basis: 33%;
+          padding-right: 20px;
           flex-grow: 0;
           flex-shrink: 0;
           margin-top: 10px;
+          flex-wrap: wrap;
           .img_box{
             width: 100%;
             position: relative;
@@ -49,6 +51,9 @@
             .product_desc{
               margin-bottom: 5px;
               font-size: $fontSizeSmall;
+              & + p{
+                font-size: 12px;
+              }
             }
           }
           &:hover{

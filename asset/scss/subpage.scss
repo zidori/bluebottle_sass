@@ -1,3 +1,4 @@
+/* subpage css */
 body.subpage {
   main .container {
     display: flex;
@@ -8,10 +9,13 @@ body.subpage {
       flex-grow: 0;
       box-sizing: border-box;
       padding-right: 50px;
+      height: 100%;
 
       ul {
+        height: 100%;
         li {
           border-bottom: 1px solid $borderColor;
+          height: 100%;
 
           a {
             display: inline-block;
@@ -20,10 +24,12 @@ body.subpage {
             line-height: 50px;
             font-size: $fontSizeMid;
             box-sizing: border-box;
-            transition: 0.3s;
+            transition-property: padding-left, background, color;
+            transition-duration: 1s;
 
             &:hover {
               padding-left: 10px;
+              transition: padding 1s;
             }
 
             &.on {
@@ -66,6 +72,86 @@ body.subpage {
             }
           }
         }
+        &.virtual{
+          position: relative;
+          width: 100%;
+          height: 420px;
+          background: url("../img/learn/learn.jpg") no-repeat center center;
+          background-size: cover;
+          margin-bottom: 50px;
+          .subtitle{
+            position: absolute;
+            padding-top: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6d6e71;
+            &:before{
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 25px;
+              height: 3px;
+              background: #6d6e71;
+            }
+          }
+          & ~ .inner{
+            .items{
+              display: flex;
+              flex-direction: row;
+              align-items: flex-start;
+              padding: 20px 40px 20px 0;
+              border: 1px solid #eceeef;
+              // height: 340px;
+              .course_number{
+                padding: 0 20px;
+                font-size: $titleSizeMid;
+                font-weight: 500;
+              }
+              .course_box{
+                width: 80%;
+                .course_name{
+                  font-size: $fontSizeBig;
+                  padding-bottom: 10px;
+                  border-bottom: 1px solid #eceeef;
+                  cursor: pointer;
+                  position: relative;
+                  &:hover{
+                    color: $fontHoverColor;
+                  }
+                  &:after{
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 1px;
+                    background: #eceeef;
+                  }
+                }
+                .curriculum{
+                  .curriculum_list{
+                    margin: 25px 0;
+                    padding-bottom: 0;
+                    padding-left: 20px;
+                    position: relative;
+                    &:before{
+                      content: "";
+                      position: absolute;
+                      top: calc(50% - 2px);
+                      left: 0;
+                      width: 5px;
+                      height: 5px;
+                      border-right: 1px solid #6d6e71;
+                      border-top: 1px solid #6d6e71;
+                      transform: rotate(45deg);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
 
       .box {
@@ -83,6 +169,68 @@ body.subpage {
 
           .textblue {
             color: $primaryColor;
+          }
+          &.brew{
+            padding: 20px;
+            .brew_box{
+              position: relative;
+              cursor: pointer;
+              img{
+                opacity: 1;
+              }
+              .img_hover_box{
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background: #000;
+                opacity: 0.2;
+                transition-property: opacity;
+                transition-duration: 0.2s;
+              }
+              .brew_text{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                color: #fff;
+                .brew_title{
+                  // position: absolute;
+                  width: 100%;
+                  // top: 50%;
+                  // left: 50%;
+                  // transform: translate(-45%, -50%);
+                  font-size: $titleSizeMid;
+                  text-transform: uppercase;
+                  font-weight: bold;
+                }
+                .start_guide{
+                  position: absolute;
+                  // top: 50%;
+                  // left: 50%;
+                  // transform: translate(-50%, -50%);
+                  margin-top: 30px;
+                  padding-right: 20px;
+                  &:after{
+                    position: absolute;
+                    content: "";
+                    bottom: calc(50% - 3px);
+                    right: 0;
+                    width: 5px;
+                    height: 5px;
+                    border-right: 1px solid #fff;
+                    border-top: 1px solid #fff;
+                    transform: rotate(45deg);
+                  }
+                }
+              }
+              &:hover{
+                .img_hover_box{
+                  opacity: 0.5;
+                }
+              }
+            }
           }
         }
       }
@@ -207,6 +355,41 @@ body.subpage {
             width: 1000px;
             height: 560px;
           }
+        }
+        &.return{
+          .items{
+            padding: 20px 0;
+            font-weight: 400;
+            h3{
+              padding-top: 0;
+              & + p{
+                font-size: $fontSizeNormal;
+                a{
+                  background: none;
+                  color: $primaryColor;
+                }
+                & + span{
+                  font-weight: 200;
+                }
+              }
+            }
+          }
+        }
+      }
+      h3.course_title{
+        padding: 25px 0;
+        position: relative;
+        color: #6d6e71;
+        font-size: $titleSizeBig;
+        margin-top: 20px;
+        &:before{
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 30px;
+          height: 3px;
+          background: $primaryColor;
         }
       }
     }
