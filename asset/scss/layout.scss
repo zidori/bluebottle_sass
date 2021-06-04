@@ -25,8 +25,10 @@
       float: right;
       ul{
         float: left;
+        width: 100%;
         li{
           position: relative;
+          // width: 100%;
           float: left;
           margin-left: 30px;
           &:nth-child(1){
@@ -36,15 +38,16 @@
             line-height: 60px;
             height: 60px;
             text-transform: uppercase;
+            width: 100%;
           }
-          &:hover{
-            .submenu{
-              visibility: visible;
-              opacity: 1;
-              top: 100%;
-            }
-          }
-          // submenu
+          // &:hover{
+          //   ul.submenu{
+          //     visibility: visible;
+          //     opacity: 1;
+          //     top: 100%;
+          //   }
+          // }
+          /* submenu */
           .submenu{
             width: 100%;
             position: absolute;
@@ -77,6 +80,13 @@
               &:hover{
                 color: $fontHoverColor;
               }
+            }
+          }
+          &:hover{
+            ul.submenu{
+              visibility: visible;
+              opacity: 1;
+              top: 100%;
             }
           }
         }

@@ -95,8 +95,13 @@
           font-size: $fontSizeNormal;
           color: $primaryColor;
           background: none;
+          transition-property: background, color;
+          transition-duration: 1s;
           &:hover {
-            color: $fontHoverColor;
+            background: $fontHoverColor;
+            color: #fff;
+            border: none;
+            box-sizing: border-box;
           }
         }
       }

@@ -29,8 +29,8 @@ li{
 a{
   text-decoration: none;
   color: $fontBasicColor;
-  // transition-property: none;
-  // transition-duration: 0.3s;
+  transition-property: none;
+  transition-duration: 0.3s;
   &:hover{
     color: $primaryColor;
   }

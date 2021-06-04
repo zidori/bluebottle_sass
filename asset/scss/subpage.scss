@@ -25,11 +25,11 @@ body.subpage {
             font-size: $fontSizeMid;
             box-sizing: border-box;
             transition-property: padding-left, background, color;
-            transition-duration: 1s;
+            transition-duration: 0.3s, 0.3s, 0.4s;
 
             &:hover {
               padding-left: 10px;
-              transition: padding 1s;
+              transition: padding 0.2s;
             }
 
             &.on {
